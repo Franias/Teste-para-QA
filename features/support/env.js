@@ -8,7 +8,6 @@ function CustomWorld() {
 
 module.exports = function() {
   this.World = CustomWorld;
-
-  // sets a default timeout to 30 seconds.  Time is in ms.
+  //default timeout to 30 seconds
   this.setDefaultTimeout(30 * 1000);
 };
