@@ -11,22 +11,26 @@ module.exports = function () {
     });
   
     this.Then(/^I should see a simulation form$/, function() {
-      this.driver.byID().then(function (title) {
-        assert.equal(title, "Test Cookbook");
-        return title;
-      });
+      return driver.wait(until.elementLocated(By.id('formInvestimento')), 1000);
     });
 
     this.When(/^I inform my profile <associate>$/, function() {
+        this.driver.findElement(By.name('perfil')).click();
+    //   .then(function (title) {
+    //     assert.equal(title, "Test Cookbook");
+    //     return title;
+    //   });
 
-    }    
-    this.When('I would apply R$<investiment>', function() {
+    });    
+    this.When('I would apply R${int}', function(input) {
+        this.driver.findElement(By.name('valorAplicar')).sendKeys(input);
+    });
 
-    }
-    this.When('I would save R$<savings> for <time>', function() {
-
-    }
+    this.When('I would save R${int} for months', function(input) {
+        this.driver.findElement(By.name('valorInvestir')).sendKeys(input);
+        return driver.wait()
+    });
     this.Then(/^I could simulate with success$/, function() {
 
-    }
+    });
 }
