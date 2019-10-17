@@ -1,0 +1,27 @@
+{
+  "name": "teste-para-qa",
+  "version": "1.0.0",
+  "description": "Teste para a SouthSystem",
+  "main": "helpers.js",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "cucumber": "^6.0.2",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "chromedriver": "^2.46.0"
+  },
+  "scripts": {
+    "test": "cucumber-js ./features -r ./features/step-definitions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franias/Teste-para-QA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Franias/Teste-para-QA/issues"
+  },
+  "homepage": "https://github.com/Franias/Teste-para-QA#readme"
+}
