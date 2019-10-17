@@ -1,7 +1,6 @@
 const assert = require('assert');
 const { Given, When, Then } = require('cucumber');
 const {Builder, By, until} = require('selenium-webdriver');
-// const {simulationPageObjects} = require('../../page-objects/simulation-page.js');
 
 let driver = new Builder().forBrowser('chrome').build();
 
@@ -23,12 +22,15 @@ module.exports = function () {
 
     });    
     this.When('I would apply R${int}', function(input) {
+        const input = 2000;
         this.driver.findElement(By.name('valorAplicar')).sendKeys(input);
     });
 
     this.When('I would save R${int} for months', function(input) {
+        const input = 2000;
+
         this.driver.findElement(By.name('valorInvestir')).sendKeys(input);
-        return driver.wait(until.elementLocated(By.id('periodo')), 1000).click();
+        return this.driver.wait(until.elementLocated(By.id('periodo')), 1000).click();
     });
     this.Then(/^I could simulate with success$/, function() {
         this.driver.findElement(By.xpath('//*[@id="formInvestimento"]/div[5]/ul/li[2]/button')).click();
