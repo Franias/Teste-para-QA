@@ -28,9 +28,9 @@ module.exports = function () {
 
     this.When('I would save R${int} for months', function(input) {
         this.driver.findElement(By.name('valorInvestir')).sendKeys(input);
-        return driver.wait()
+        return driver.wait(until.elementLocated(By.id('periodo')), 1000).click();
     });
     this.Then(/^I could simulate with success$/, function() {
-
+        this.driver.findElement(By.xpath('//*[@id="formInvestimento"]/div[5]/ul/li[2]/button')).click();
     });
 }
